@@ -54,11 +54,8 @@ namespace DeepSigma.UnitTest
 
         [Theory]
         [MemberData(nameof(GetTestDataFromCsv))]
-        public void MyTest(string stringValue, int intValue, bool boolValue)
+        public void MyCSVTest(string stringValue, int intValue, bool boolValue)
         {
-            // Arrange
-            // Act
-            // Assert
             Assert.True(boolValue); // Example assertion
         }
 
@@ -84,7 +81,7 @@ namespace DeepSigma.UnitTest
 
         private double Add(double x, double y)
         {
-            return x + y; // This is a placeholder for the actual method you would test
+            return x + y;
         }
 
 
