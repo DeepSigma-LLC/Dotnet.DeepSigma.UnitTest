@@ -23,6 +23,7 @@ namespace DeepSigma.UnitTest
         [Theory]
         [InlineData(1, 1, 2)]
         [InlineData(0, 0, 0)]
+        [InlineData(0, 2, 2)]
         [InlineData(double.MaxValue, 5, double.MaxValue)]
         public void Add_SimpleValuesShouldCalculate_Inline(double x, double y, double expected)
         {
@@ -54,9 +55,9 @@ namespace DeepSigma.UnitTest
 
         [Theory]
         [MemberData(nameof(GetTestDataFromCsv))]
-        public void MyCSVTest(string stringValue, int intValue, bool boolValue)
+        public void MyCSVTest_ShouldBeFalse(string stringValue, int intValue, bool boolValue)
         {
-            Assert.True(boolValue); // Example assertion
+            Assert.True(boolValue == false); // Example assertion
         }
 
         private string LoadTextFile(string filePath)
