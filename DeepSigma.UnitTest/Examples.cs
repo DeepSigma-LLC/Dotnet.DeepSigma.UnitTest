@@ -7,6 +7,9 @@ namespace DeepSigma.UnitTest;
 /// </summary>
 public class Examples
 {
+    /// <summary>
+    /// A simple test to verify addition functionality.
+    /// </summary>
     [Fact]
     public void Add_SimpleValuesShouldCalculate()
     {
@@ -20,6 +23,12 @@ public class Examples
         Assert.Equal(expected, actual);
     }
 
+    /// <summary>
+    /// A parameterized test to verify addition with multiple data sets.
+    /// </summary>
+    /// <param name="x"></param>
+    /// <param name="y"></param>
+    /// <param name="expected"></param>
     [Theory]
     [InlineData(1, 1, 2)]
     [InlineData(0, 0, 0)]
@@ -34,6 +43,9 @@ public class Examples
         Assert.Equal(expected, actual);
     }
 
+    /// <summary>
+    /// A test to verify file loading functionality with valid and invalid inputs.
+    /// </summary>
     [Fact]
     public void LoadTextFile_ValidNameShouldWork()
     {
@@ -41,22 +53,36 @@ public class Examples
         Assert.True(actual.Length > 0);
     }
 
+    /// <summary>
+    /// A test to verify that loading a file with an invalid name throws a FileNotFoundException.
+    /// </summary>
     [Fact]
     public void LoadTextFile_InvalidNameShouldFail()
     {
         Assert.Throws<FileNotFoundException>(() => LoadTextFile(""));
     }
 
+    /// <summary>
+    /// A test to verify that loading a file with an invalid name throws an ArgumentException with a specific parameter name.
+    /// </summary>
     [Fact]
     public void LoadTextFile_ArgumentInvalidException()
     {
         Assert.Throws<ArgumentException>("ArgExcept", () => LoadTextFile2(""));
     }
 
+    /// <summary>
+    /// A parameterized test that reads data from a CSV file to perform assertions.
+    /// </summary>
+    /// <param name="stringValue"></param>
+    /// <param name="intValue"></param>
+    /// <param name="boolValue"></param>
     [Theory]
     [MemberData(nameof(GetTestDataFromCsv))]
     public void MyCSVTest_ShouldBeFalse(string stringValue, int intValue, bool boolValue)
     {
+        Assert.True(stringValue.Length >= 1); // Example assertion
+        Assert.True(intValue >= 0); // Example assertion
         Assert.True(boolValue == false); // Example assertion
     }
 
@@ -85,8 +111,10 @@ public class Examples
         return x + y;
     }
 
-
-    // Static method to read data from CSV
+    /// <summary>
+    /// Static method to read data from CSV
+    /// </summary>
+    /// <returns></returns>
     public static IEnumerable<object[]> GetTestDataFromCsv()
     {
         var lines = File.ReadAllLines("TestData.csv");

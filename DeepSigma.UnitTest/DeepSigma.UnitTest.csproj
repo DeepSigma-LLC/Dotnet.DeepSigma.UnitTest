@@ -8,7 +8,7 @@
 	  <IsPackable>True</IsPackable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>DeepSigma.UnitTest</Title>
-    <Version>1.0.0.1</Version>
+    <Version>1.0.1.0</Version>
     <Authors>DeepSigma LLC</Authors>
     <PackageProjectUrl>https://github.com/DeepSigma-LLC/Dotnet.DeepSigma.UnitTest.git</PackageProjectUrl>
     <RepositoryUrl>https://github.com/DeepSigma-LLC/Dotnet.DeepSigma.UnitTest.git</RepositoryUrl>
