@@ -122,7 +122,7 @@ public class Examples
         {
             var parts = line.Split(','); // Assuming comma-separated values
                                          // Convert parts to appropriate types if needed
-            yield return new object[] { parts[0], int.Parse(parts[1]), bool.Parse(parts[2]) };
+            yield return [parts[0], int.Parse(parts[1]), bool.Parse(parts[2])];
         }
     }
 }
